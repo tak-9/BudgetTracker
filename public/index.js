@@ -79,6 +79,7 @@ function populateChart() {
 }
 
 function sendTransaction(isAdding) {
+  console.log("sendTransaction()");
   let nameEl = document.querySelector("#t-name");
   let amountEl = document.querySelector("#t-amount");
   let errorEl = document.querySelector(".form .error");
@@ -105,8 +106,11 @@ function sendTransaction(isAdding) {
   }
 
   // add to beginning of current array of data
-  transactions.unshift(transaction);
-
+  console.log("transactions",transactions);
+  if (!transactions){
+    transactions.unshift(transaction);
+  }
+  
   // re-run logic to populate ui with new record
   populateChart();
   populateTable();
@@ -135,6 +139,7 @@ function sendTransaction(isAdding) {
     }
   })
   .catch(err => {
+    console.log("sendTransaction() fetch .catch()");
     // fetch failed, so save in indexed db
     saveRecord(transaction);
 
