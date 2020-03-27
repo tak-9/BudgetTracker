@@ -106,15 +106,9 @@ function sendTransaction(isAdding) {
   }
 
   // add to beginning of current array of data
-  console.log("transactions",transactions);
-  if (!transactions){
+  if (typeof transactions !== "undefined"){
     transactions.unshift(transaction);
   }
-  
-  // re-run logic to populate ui with new record
-  populateChart();
-  populateTable();
-  populateTotal();
   
   // also send to server
   fetch("/api/transaction", {
@@ -125,7 +119,12 @@ function sendTransaction(isAdding) {
       "Content-Type": "application/json"
     }
   })
-  .then(response => {    
+  .then(response => {
+    console.log("response",response); 
+    // re-run logic to populate ui with new record
+    populateChart();
+    populateTable();
+    populateTotal();
     return response.json();
   })
   .then(data => {
@@ -142,6 +141,10 @@ function sendTransaction(isAdding) {
     console.log("sendTransaction() fetch .catch()");
     // fetch failed, so save in indexed db
     saveRecord(transaction);
+
+    populateChart();
+    populateTable();
+    populateTotal();
 
     // clear form
     nameEl.value = "";
