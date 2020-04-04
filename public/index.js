@@ -1,5 +1,8 @@
 let transactions = [];
 let myChart;
+let waitingIcon = document.getElementById("waitingIcon");
+
+waitingIcon.setAttribute("class", "spinner-border text-primary");
 
 fetch("/api/transaction")
   .then(response => {
@@ -12,6 +15,7 @@ fetch("/api/transaction")
     populateTotal();
     populateTable();
     populateChart();
+    waitingIcon.removeAttribute("class")
   });
 
 function populateTotal() {
