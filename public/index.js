@@ -115,6 +115,7 @@ function sendTransaction(isAdding) {
   }
   
   // also send to server
+  waitingIcon.setAttribute("class", "spinner-border text-primary");
   fetch("/api/transaction", {
     method: "POST",
     body: JSON.stringify(transaction),
@@ -153,6 +154,9 @@ function sendTransaction(isAdding) {
     // clear form
     nameEl.value = "";
     amountEl.value = "";
+  })
+  .finally(()=>{
+    waitingIcon.removeAttribute("class")
   });
 }
 

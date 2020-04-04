@@ -43,6 +43,7 @@ function checkDatabase() {
 
     getAll.onsuccess = function () {
         if (getAll.result.length > 0) {
+            waitingIcon.setAttribute("class", "spinner-border text-primary");
             fetch("/api/transaction/bulk", {
               method: "POST",
               body: JSON.stringify(getAll.result),
@@ -61,6 +62,9 @@ function checkDatabase() {
       
               // clear all items in your store
               store.clear();
+            })
+            .finally(()=>{
+              waitingIcon.removeAttribute("class")
             });
           }
     };
