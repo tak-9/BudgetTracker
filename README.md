@@ -18,21 +18,6 @@ When brought back online:
 
 The Progressive Web Application technology makes a webpage installable as an app. This makes app available even when it's offline. The data is stored in IndexedDB on browser which can be used even when it is offline. Data is transferred to mongoDB on server side when it becomes online.
 
-
-## Setup
-1.	Ensure MongoDB and node.js is installed. 
-2.	Install node.js libraries. 
-
-`$ npm install`
-
-3.	Start server.
-
-`$ node server.js` 
-      
-4.	Open it by a web browser. 
-
-
-
 ## Progress Web Application
  
  <i>"Progressive Web Apps provide an installable, app-like experience on desktop and mobile that are built and delivered directly via the web. They're web apps that are fast and reliable. And most importantly, they're web apps that work in any browser." </i>
@@ -57,11 +42,23 @@ On a mobile phone.
 3. The icon is created on home screen. This can be used even when it's offline.
 
 
+## Setup
+1.	Ensure MongoDB and node.js are installed. 
+2.	Install node.js libraries. 
+
+`$ npm install`
+
+3.	Start server.
+
+`$ node server.js` 
+      
+4.	Open it by a web browser. 
+
+
 ## Technologies used
 * Frontend: HTML, CSS, JavaScript, [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb), PWA
 * Backend: [Node.js](https://nodejs.org), [Express](https://expressjs.com/), [Mongoose](https://mongoosejs.com/), [MongoDB](https://www.mongodb.com/)
 
-
-  
+ 
 ##  Credit 
 I have implemented PWA and indexedDB support using code provided for course material as a base. 
