@@ -62,6 +62,13 @@ On a mobile phone.
 * Backend: [Node.js](https://nodejs.org), [Express](https://expressjs.com/), [Mongoose](https://mongoosejs.com/), [MongoDB](https://www.mongodb.com/)
 
 
+## Migrate from mLab to MongoDB Atlas
+[The mLab MongoDB add-on will be removed from all Heroku apps on November 10, 2020.](https://devcenter.heroku.com/changelog-items/1823)
+
+[MongoDB Atlas Sandbox](https://www.mongodb.com/cloud/atlas) is now used for alternative. 
+
+[Migration Guide](https://gist.github.com/caprosset/67328b142afd0d47b19f72df7d69e655)
   
+
 ##  Credit 
 I have reused and modified code provided as a course material. 
